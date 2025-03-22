@@ -188,3 +188,20 @@ Sat 22 Mar 2025 01:06:57 PM UTC:
  tests:  3|2
 total_score: 40/70
 023d4d6
+Sat 22 Mar 2025 01:07:18 PM UTC: 
+ exercises.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:5:
+exercises.c: In function ‘copia_pila’:
+exercises.c:104:14: error: passing argument 2 of ‘push’ makes pointer from integer without a cast [-Werror=int-conversion]
+  104 |     push(P2, elem);
+      |              ^~~~
+      |              |
+      |              int
+In file included from exercises.c:2:
+stack.h:11:31: note: expected ‘void *’ but argument is of type ‘int’
+   11 | void push(Stack *stack, void *data) { pushFront(stack, data); }
+      |                         ~~~~~~^~~~
+cc1: all warnings being treated as errors
+Compilation failed
+35dec55
