@@ -145,3 +145,23 @@ Sat 22 Mar 2025 01:01:25 PM UTC:
  tests:  4|1
 total_score: 50/70
 cce9264
+Sat 22 Mar 2025 01:02:37 PM UTC: 
+ exercises.c | 25 ++-----------------------
+ 1 file changed, 2 insertions(+), 23 deletions(-)
+In file included from test.c:5:
+exercises.c: In function ‘copia_pila’:
+exercises.c:103:16: error: cast from pointer to integer of different size [-Werror=pointer-to-int-cast]
+  103 |     int elem = (int) top(Paux);
+      |                ^
+exercises.c:104:14: error: passing argument 2 of ‘push’ makes pointer from integer without a cast [-Werror=int-conversion]
+  104 |     push(P2, elem);
+      |              ^~~~
+      |              |
+      |              int
+In file included from exercises.c:2:
+stack.h:11:31: note: expected ‘void *’ but argument is of type ‘int’
+   11 | void push(Stack *stack, void *data) { pushFront(stack, data); }
+      |                         ~~~~~~^~~~
+cc1: all warnings being treated as errors
+Compilation failed
+a5820ab
