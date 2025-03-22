@@ -108,7 +108,6 @@ void copia_pila(Stack *P1, Stack *P2) {
     push(P2, elem);
     pop(Paux);
   }
-   free(Paux);
 }
 
 /*
