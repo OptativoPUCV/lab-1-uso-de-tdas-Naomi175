@@ -242,3 +242,14 @@ Sat 22 Mar 2025 01:26:14 PM UTC:
  tests:  4|1
 total_score: 50/70
 46c5b0b
+Sat 22 Mar 2025 01:34:57 PM UTC: 
+ exercises.c | 28 +++++-----------------------
+ 1 file changed, 5 insertions(+), 23 deletions(-)
+In file included from test.c:5:
+exercises.c: In function ‘copia_pila’:
+exercises.c:100:11: error: unused variable ‘elem’ [-Werror=unused-variable]
+  100 |     void *elem = top(P1);
+      |           ^~~~
+cc1: all warnings being treated as errors
+Compilation failed
+d77d5cc

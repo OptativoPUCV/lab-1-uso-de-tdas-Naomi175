@@ -91,40 +91,22 @@ Ejercicio 4.
 La función copia los punteros de la pila P1 en la pila P2.
 El orden de ambas pilas se debe mantener.
 Puedes usar una pila auxiliar.
-
-void copia_pila(Stack *P1, Stack *P2) {
-  Stack* Paux = create_stack();
-
-  while (top(P1) != NULL) {
-    push(Paux, pop(P1));
-  }
-  while (top(Paux) != NULL) {
-    int *elem = (int *) top(Paux);
-    push(P2, *elem);
-    push(P1, pop(Paux));
-  }
-  free(Paux);
-}
 */
 
-void copia_pila(Stack* P1, Stack* P2) {
-   Stack* P_aux = create_stack();
-   Stack* P_aux2 = create_stack();
-   while(top(P1)!= NULL){
-      void* elemento = top(P1);
-      push(P_aux, elemento);
-      push(P_aux2, elemento);
-      pop(P1);
-   }
-   while(top(P_aux)!= NULL){
-      void* elemento = top(P_aux);
-      push(P1, elemento);
-      push(P2, elemento);
-      pop(P_aux);
-      pop(P_aux2);
-   }
-   free(P_aux);
-   free(P_aux2);
+void copia_pila(Stack *P1, Stack *P2) {
+  Stack *Paux = create_stack();
+
+  while (top(P1) != NULL) {
+    void *elem = top(P1);
+    push(Paux, pop(P1));
+  }
+
+  while (top(Paux) != NULL) {
+    void *elem = top(Paux);
+    push(P1, pop(Paux));
+    push(P2, elem);
+  }
+   free(Paux);
 }
 
 /*
