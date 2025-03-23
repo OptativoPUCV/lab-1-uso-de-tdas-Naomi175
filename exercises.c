@@ -104,6 +104,7 @@ void copia_pila(Stack *P1, Stack *P2) {
     push(P1, top(Paux));
     push(P2, pop(Paux));
   } 
+  destroy_stack(Paux);
 }
 
 /*
@@ -125,7 +126,7 @@ int parentesisBalanceados(char *cadena) {
       if (get_size(pila) == 0) return 0;
     
     char *topito = pop(pila);
-    if (*c == ')' && *topito != '(' || *c == '}' && *topito != '{' || *c == ']' && *topito != '[') return 0;
+    if ((*c == ')' && *topito != '(') || (*c == '}' && *topito != '{') || (*c == ']' && *topito != '[')) return 0;
     
     }
     c++;
